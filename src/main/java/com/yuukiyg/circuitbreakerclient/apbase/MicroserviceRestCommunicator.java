@@ -25,8 +25,11 @@ public class MicroserviceRestCommunicator extends SimpleRestCommunicator{
     //@Autowired
     //RestTemplate restTemplate;
 
-    private final String requestTrackId = "REQUEST_TRACE_ID";
-    private final String sessionTrackId = "SESSION_TRACE_ID";
+    //private final String requestTrackId = "REQUEST_TRACE_ID";
+    //private final String sessionTrackId = "SESSION_TRACE_ID";
+
+    private final String trackId = "TRACK_ID";
+
 
 
     /**
@@ -110,14 +113,9 @@ public class MicroserviceRestCommunicator extends SimpleRestCommunicator{
      * @param headers
      */
     protected void setCommonHeaders(MultiValueMap<String, String> headers) {
-        // headerにセッショントレースIDを差し込む
-        if (!headers.containsKey(sessionTrackId)) {
-            headers.add(sessionTrackId, (String) MDC.get(sessionTrackId));
-        }
-
-        // headerにリクエストトレースIDを差し込む
-        if (!headers.containsKey(requestTrackId)) {
-            headers.add(requestTrackId, (String) MDC.get(requestTrackId));
+        // headerにtrackIdを差し込む
+        if (!headers.containsKey(trackId)) {
+            headers.add(trackId, (String) MDC.get(trackId));
         }
     }
 

@@ -12,8 +12,6 @@ import org.springframework.util.MultiValueMap;
  * </p>
  */
 public interface RestCommunicator {
-
-
     /**
      * GETリクエストの送信
      *

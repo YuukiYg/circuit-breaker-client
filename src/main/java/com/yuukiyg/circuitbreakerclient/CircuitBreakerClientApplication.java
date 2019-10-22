@@ -6,8 +6,8 @@ import org.springframework.cloud.netflix.hystrix.EnableHystrix;
 import org.springframework.context.ConfigurableApplicationContext;
 
 import com.yuukiyg.circuitbreakerclient.app.SendRestService;
-@EnableHystrix
 
+@EnableHystrix
 @SpringBootApplication
 public class CircuitBreakerClientApplication {
 

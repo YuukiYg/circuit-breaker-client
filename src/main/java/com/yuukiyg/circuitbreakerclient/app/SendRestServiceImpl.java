@@ -19,11 +19,10 @@ import com.yuukiyg.circuitbreakerclient.apbase.RestCommunicator;
 public class SendRestServiceImpl implements SendRestService{
 
     @Autowired
-    RestCommunicator comm;
+    private RestCommunicator comm;
 
     @Value("${targetserver.port}")
-    int serverPort;
-
+    private int serverPort;
 
     @Override
     public void execute() {
